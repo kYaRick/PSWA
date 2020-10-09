@@ -1,3 +1,4 @@
+"use strict"
 window.onload = function () {
   let result = {};
   let step = 0;
@@ -12,7 +13,7 @@ window.onload = function () {
   }
 
   document.onclick = function (event) {
-    event.stopPropagation();                                                    //сопорить передачу події далі;
+    event.stopPropagation();
     if (event.target.classList.contains('answer-variant') && step < quiz.length) {
       // event.target.data
       if (result[event.target.dataset.v] != undefined) {
