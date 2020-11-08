@@ -36,23 +36,3 @@ function slideTime(n) {
 }
 
 // setInterval(slideTime, 4000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
