@@ -48,6 +48,7 @@
 
 .dot{
   cursor: pointer;
+  display: inline-block;
 	height: .5em;
 	width: .5em;
 	margin: 0 2px;

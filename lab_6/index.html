@@ -16,7 +16,7 @@
   <header class="_main_page_header">
     <h1>Лабораторна робота 6: <br><span>Форми і JavaScript</span></h1>
     <nav class="_nav">
-      <section class="content__dmenu">
+      <section class="content__dmenu" style="z-index: 999;">
         <ul>
 
           <li class="content__link">
@@ -76,7 +76,7 @@
     </nav>
   </header>
 
-  <main class="_main_page_content">
+  <main class="_main_page_content" style="z-index: 1;">
     <div class="slideshow-container">
       <div class="mySlides fade"><br>
         <img src="./source/slider/lab_1.jpg" style="width: 100%" alt="no_image_error">
@@ -101,9 +101,13 @@
     <br>
 
     <div style="text-align: center" ;>
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
+
+      <span class="dot" onclick="currentSlide(1)"> <img src="./source/slider/lab_1.jpg" alt="1"
+          style="width: 20px; height: 20px;"> </span>
+      <span class="dot" onclick="currentSlide(2)"> <img src="./source/slider/lab_2.jpg" alt="2"
+          style="width: 20px; height: 20px;"> </span>
+      <span class="dot" onclick="currentSlide(3)"> <img src="./source/slider/lab_4.jpg" alt="3"
+          style="width: 20px; height: 20px;"> </span>
     </div>
   </main>
 
