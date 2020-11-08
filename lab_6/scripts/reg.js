@@ -49,14 +49,20 @@ function checkRepeatPass(input, name) {
   }
 }
 function checkFile(name) {
-  let temp = document.getElementById("file_photo").files[0].type;
+  let temp = null;
+  try {
+    temp = document.getElementById("file_photo").files[0].type;
+  } catch (e) {
+    temp = "error";
+  }
   let arr = temp.split("/", 2);
 
   // for debug mode:
   // console.clear();
+  // console.log("name: " + name);
   // console.log("arr: " + arr)
   // console.log("arr[1]: " + arr[1]);
-  // console.log("regex: " + patterns[name].test(arr[1].toString()))
+  // console.log("regex: " + patterns[name].test(arr[1]))
 
   if (patterns[name].test(arr[1])) {
     document.getElementById(name).closest("div").style.display = "none"
