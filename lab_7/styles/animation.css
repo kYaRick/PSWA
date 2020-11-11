@@ -1,0 +1,77 @@
+td{
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+}
+
+.main_block
+{
+  margin: 5% 10% 5% 10%;
+  padding: 0;
+  text-align: center;
+  font-size: 150%;
+}
+
+#main_block_5{
+  border: red solid 5px;
+  height: 50em;
+  margin: 0;
+  text-align: left;
+  width: 99%;
+}
+
+#position{
+  position: relative;
+  left: 100px;
+  top: 100px;
+}
+
+.space_area{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.tBlock{
+  background-color: yellow;
+  display: inline-block;
+  height: 10em;
+  margin: 0 1em;
+  padding: 0;
+  width: 10em;
+}
+
+.forButton{
+  text-align: center;
+}
+
+.defButton{
+  background-color: yellow;
+  border: white .1em solid;
+  color: grey;
+  font-size: 120%;
+  font-weight: bold;
+  padding: 16px 20px;
+  margin: 8px 0;
+  max-width: 50%;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.6;
+}
+
+.defButton:hover{
+  opacity: 1;
+}
+
+.opacity{
+  opacity: 0.4;
+}
+
+.hideStyle{
+  display: none;
+}
+
+.boldStyle{
+  font-weight: bold;
+}
