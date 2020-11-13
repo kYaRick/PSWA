@@ -110,9 +110,9 @@ $(function () {
     console.clear();
     function find(e) {
       let reg = new RegExp("^" + $('input#tags').val() + ".", "i");
+      if (reg.test(e)) { temp.push(e) }
+      //for debug mode
       // console.log($('input#tags').val() + "   " + e + "   " + reg.test(e))
-      if (reg.test(e))
-        temp.push(e);
       // console.log(temp);
     }
 
