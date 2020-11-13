@@ -117,7 +117,7 @@ function checkBirthdayDate(input, name) {
 
       if (Number(arr[2].length) === 2) {
         arr[2] = "20" + arr[2];
-        // console.log(arr[2]); //debug;
+        console.log(arr); //debug;
       }
       else if (Number(arr[2].length) === 3) {
         err.textContent = "*Некоректно вказаний рік народження!";
