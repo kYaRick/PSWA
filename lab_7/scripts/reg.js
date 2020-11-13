@@ -1,10 +1,10 @@
 "use strict"
-let resultSub = [];
+let resultSub = null;
 const inputs = document.querySelectorAll("input");
 
 const patterns = {
-  "email": /^[A-Za-z0-9]{1,}([A-Za-z0-9]{1,}|(\.{1})?[A-Za-z0-9]{1,}){1,}\@{1}[A-Za-z0-9]{1,}(([\-|_]{1}[A-Za-z0-9]{1,}){1,})?\.{1}[A-Za-z0-9]{2,6}((\.{1}[a-z]{2,6}){0,5})?$/,
-  "sur_name": /^[A-ZА-ЯІіЫы]{1}((('){1})?[A-Za-zА-Яа-яІіЫы]){1,}(((([\s|\-]){1})?[A-ZА-ЯІіЫы]{1}((('){1})?[A-Za-zА-Яа-яІіЫы]){1,}){1,})?$/,
+  "email": /^[A-Za-z]{1,}([A-Za-z0-9]{1,}|([\.|_]{1})?[A-Za-z0-9]{1,}){1,}\@{1}[A-Za-z0-9]{1}(([\-|_]{1}[A-Za-z0-9]{1,}){1,})?\.{1}[A-Za-z]{2,6}((\.{1}[A-Za-z]{2,6}){0,6})?$/,
+  "sur_name": /^[A-ZА-ЯІіЫы]{1}(([а-яa-zіы]{1,})?(\'{1})?[а-яa-zіы]{1,}){1}(([\s|\-]{1}[A-Za-zА-Яа-яІіЫы]{1}(([а-яa-zіы]{1,})?(\'{1})?[а-яa-zіы]{1,}){1}){1,})?$/,
   "first_name": /^[A-ZА-ЯІіЫы]{1}((('){1})?[A-Za-zА-Яа-яІіЫы]){1,}(((([\s|\-]){1})?[A-ZА-ЯІіЫы]{1}((('){1})?[A-Za-zА-Яа-яІіЫы]){1,}){1,})?$/,
   "password": /^(?=.*[a-zа-яіы])(?=.*[A-ZА-ЯІЫ])(?=.*\d)(?=.*[@$!%*?&])[A-Za-zА-Яа-яІЫіы\d@$!%*?&]{6,}$/,
   "about": /^[A-Za-z0-9А-Яа-яІіЫы@$#!._]{6,50}$/,
@@ -30,6 +30,7 @@ function handler(input) {
       break;
 
     default:
+      input.value = input.value.trim();
       let result = patterns[name].test(input.value);
       let elVision = document.getElementById(input.attributes.name.value);
       if (result) {
@@ -78,14 +79,15 @@ function checkFile(name) {
   }
 }
 function checkBirthdayDate(input, name) {
-  let el = document.getElementById(name + "_");
+  // let el = document.getElementById(name + "_");
+  let el = input.value.trim();
   let err = document.getElementById(name);
+  input.value = el;
   // console.log(value, err.textContent);
   if (patterns[name].test(input.value)) {
 
     let now = new Date();
     let temp = el.value;
-    el.value = temp;
 
     let reg = new RegExp(/^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}$/);
     let symbol = "";
@@ -204,6 +206,8 @@ function formValidation() {
   resultSub.forEach(function (el) {
     countFalse = el ? countFalse + 0 : countFalse + 1;
   })
+
+  // console.log(resultSub);   //for debug;
   // console.log(countFalse);  //for debug;
 
   if (countFalse === 0) {
@@ -219,7 +223,7 @@ function formValidation() {
         }
       })
 
-      console.log($("#about_text").val())
+      // console.log($("#about_text").val())
 
       document.getElementById("text").innerHTML =
         "Електронна пошта:" + $("input[name = 'email']").val() + " <br> " +
@@ -231,6 +235,7 @@ function formValidation() {
         "Інформація про Вас:" + $("#about_text").val() + "<br>" +
         "Фото: відповідає вимогам";
     });
+
     $("#popup__close").on("click", function () {
       $("#popup").removeClass("popup_show");
     });
@@ -238,7 +243,15 @@ function formValidation() {
   } else {
     document.getElementById("error").closest("div").style.display = "block"
   }
+
+  $("#popup__close").on("click", function () {
+    location.reload();
+  })
   $("#reg_").on("click", function () {
     $("#reg_form").submit()
+    location.reload();
   }); //send data to server;
 }
+$("#reset_").on("click", function () {
+  $("#reg_form").trigger("reset")
+})
