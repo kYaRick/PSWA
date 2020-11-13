@@ -3,7 +3,7 @@ let resultSub = null;
 const inputs = document.querySelectorAll("input");
 
 const patterns = {
-  "email": /^[A-Za-z]{1,}([A-Za-z0-9]{1,}|([\.|_]{1})?[A-Za-z0-9]{1,}){1,}\@{1}[A-Za-z0-9]{1}((([\-|_]{1})?[A-Za-z0-9]{1,}){1,})?((\.{1}[A-Za-z]{1,6}){0,6})?\.{1}[A-Za-z]{2,6}$/,
+  "email": /^[A-Za-z]{1,}([A-Za-z0-9]{1,}|([\.|_]{1})?[A-Za-z0-9]{1,}){1,}\@{1}[A-Za-z0-9]{1}((([\-|_]{1})?[A-Za-z0-9]{1,}){1,})?((\.{1}([A-Za-z]{1,}\-?[A-Za-z]{1,}){1,6}){0,6})?\.{1}[A-Za-z]{2,6}$/,
   "sur_name": /^[A-ZА-ЯІіЫы]{1}(([а-яa-zіы]{1,})?(\'{1})?[A-Za-zА-Яа-яІіЫы]{1,}){1}(([\s|\-]{1}[A-Za-zА-Яа-яІіЫы]{1}(([а-яa-zіы]{1,})?(\'{1})?[а-яa-zіы]{1,}){1}){1,})?$/,
   "first_name": /^[A-ZА-ЯІіЫы]{1}(([а-яa-zіы]{1,})?(\'{1})?[A-Za-zА-Яа-яІіЫы]{1,}){1}(([\s|\-]{1}[A-Za-zА-Яа-яІіЫы]{1}(([а-яa-zіы]{1,})?(\'{1})?[а-яa-zіы]{1,}){1}){1,})?$/,
   "password": /^(?=.*[a-zа-яіы])(?=.*[A-ZА-ЯІЫ])(?=.*\d)(?=.*[@$!%*?&])[A-Za-zА-Яа-яІЫіы\d@$!%*?&]{6,}$/,
@@ -80,9 +80,10 @@ function checkFile(name) {
 }
 function checkBirthdayDate(input, name) {
   // let el = document.getElementById(name + "_");
-  let el = input.value.trim();
+  let el = document.getElementById(name + "_");
   let err = document.getElementById(name);
-  input.value = el;
+  el.value = el.value.trim();
+  // input.value = el;
   // console.log(value, err.textContent);
   if (patterns[name].test(input.value)) {
 
