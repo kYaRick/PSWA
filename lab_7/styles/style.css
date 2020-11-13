@@ -76,14 +76,6 @@ body{
   width: 150%;
 }
 
-.submenu2_test{
-  background: yellow;
-  margin-left: 120px;
-  margin-top: -25px;
-  list-style: none;
-  position: absolute;
-}
-
 ._main_page_header{
   color: inherit;
   text-align: center;
