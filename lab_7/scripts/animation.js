@@ -94,9 +94,7 @@ $(function () {
     "Katharine Hepburn",
     "Humphrey Bogart",
     "Meryl Streep",
-    "Daniel Day-Lewis",
     "Sidney Poitier",
-    "Clark Gable",
     "Ingrid Bergman",
     "Tom Hanks",
     "Elizabeth Taylor",
@@ -105,7 +103,24 @@ $(function () {
     "Leonardo DiCaprio",
     "Cate Blanchett"];
 
-  $('input#tags').autocomplete({ source: actors });
+  let temp = [];
+
+  $("input#tags").keyup(function (e) {
+    temp = [];
+    console.clear();
+    function find(e) {
+      let reg = new RegExp("^" + $('input#tags').val() + ".", "i");
+      // console.log($('input#tags').val() + "   " + e + "   " + reg.test(e))
+      if (reg.test(e))
+        temp.push(e);
+      // console.log(temp);
+    }
+
+    actors.forEach(e => {
+      find(e);
+    });
+    $('input#tags').autocomplete({ source: temp },);
+  });
 
 });
 //кінець обробки автодоповнення;
