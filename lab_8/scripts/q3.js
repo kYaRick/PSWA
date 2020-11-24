@@ -4,6 +4,8 @@ $(document).ready(function () {
     let val = el.target.value;
     if (val == "LNU" || val == "Lviv") {
       readTextFile(el.target);
+    } else if (val == "Clear") {
+      document.getElementById("_main_page_content").textContent = "";
     }
   });
 });

@@ -93,7 +93,7 @@ body{
   color: yellow;
 }
 
-._main_page_content{
+._main_page_content, ._main_page_footer{
   text-align: center;
   margin: 0 auto;
   max-width: 50%;
