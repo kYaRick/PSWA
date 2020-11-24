@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="../source/img/js.png">
+  <link rel="stylesheet" href="../styles/style.css">
+
+  <title>Test JS Lab8</title>
+</head>
+
+<body>
+  <header class="_main_page_header">
+    <h1>Лабораторна робота 8 <br><span>Застосування Ajax</span></h1>
+    <nav class="_nav">
+      <section class="content__dmenu" style="z-index: 999;">
+        <ul>
+          <h4>Завдання</h4>
+          <li class="content__link">
+            <a href="q1.html"> 1 </a>
+          </li>
+          <li class="content__link">
+            <a href="#"> 2 </a>
+          </li>
+          <li class="content__link">
+            <a href="q3.html"> 3 </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+  </header>
+
+  <main id="_main_page_content" class="_main_page_content" style="z-index: 1;">
+    <form>
+      <input type="text" value="" id="username" /> <br />
+      <input type="text" value="" id="userage" /> <br />
+    </form>
+    <button value="User1" onclick="getInfo(0)">User1</button><br>
+    <button value="User2" onclick="getInfo(1)">User2</button><br>
+    <button value="User3" onclick="getInfo(2)">get Alex info</button><br>
+  </main>
+
+  <footer class="_main_page_footer">
+
+  </footer>
+
+  <!-- *Part of script starts -->
+  <script type="text/javascript" src="../scripts/c_jQuery.js"></script>
+  <script>
+    function getInfo(n) {
+      $.getJSON('../others/q2.json', {}, function (json) {
+        $("#username").val(json["data"][n].name)
+        $("#userage").val(json["data"][n].age)
+      })
+    } 
+  </script>
+  <!-- *Part of script finishes -->
+</body>
+
+</html>

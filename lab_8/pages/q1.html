@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="../source/img/js.png">
+  <link rel="stylesheet" href="../styles/style.css">
+
+  <title>Test JS Lab8</title>
+</head>
+
+<body>
+  <header class="_main_page_header">
+    <h1>Лабораторна робота 8 <br><span>Застосування Ajax</span></h1>
+    <nav class="_nav">
+      <section class="content__dmenu" style="z-index: 999;">
+        <ul>
+          <h4>Завдання</h4>
+          <li class="content__link">
+            <a href="#"> 1 </a>
+          </li>
+          <li class="content__link">
+            <a href="q2.html"> 2 </a>
+          </li>
+          <li class="content__link">
+            <a href="q3.html"> 3 </a>
+          </li>
+        </ul>
+      </section>
+    </nav>
+  </header>
+
+  <main id="_main_page_content" class="_main_page_content" style="z-index: 1;">
+  </main>
+
+  <footer class="_main_page_footer">
+
+  </footer>
+
+  <!-- *Part of script starts -->
+  <script type="text/javascript" src="../scripts/c_jQuery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        type: "GET",
+        url: "../others/q1.xml ",
+        dataType: "xml",
+        success: function (xml) {
+          el = document.getElementById("_main_page_content");
+          $(xml).find('man').each(function () {
+            el.textContent += $(this).attr("id") + " ";
+            $(this).find('name').each(function () {
+              el.textContent += $(this).text() + " ";
+            })
+          })
+        }
+      })
+    }) 
+  </script>
+  <!-- *Part of script finishes -->
+</body>
+
+</html>
