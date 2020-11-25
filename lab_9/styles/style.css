@@ -1,0 +1,101 @@
+body{
+  background-color: rgb(90, 90, 90);
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+._nav{
+  text-align: center;
+}
+
+.content__dmenu ul{
+  padding: inherit;
+}
+
+.content__link{
+  cursor: pointer;
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 0;
+  position: relative;
+}
+
+.content__link>a{
+  color: inherit;
+  opacity: .9;
+  padding: 0 1em;
+  text-decoration: none;
+}
+.content__link>a:hover{
+  border-top-width: .1em;
+  border-top-style: solid;
+  border-top-color: yellow;
+  opacity: 1; 
+}
+
+.submenu{
+  background-color: orange;
+  color: orange;
+  cursor: pointer;
+  list-style-type: none;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  transition: opacity .4s ease-in;
+  width: 100%;
+  z-index: 999;
+} 
+
+._submenu_link{
+  background: yellow;
+  margin: .1em 0;
+  padding: .3em;
+}
+
+._submenu_link > a{
+  color: inherit;
+  text-decoration: none;
+}
+
+._submenu_link > a:hover{
+  color: gray;
+}
+
+.submenu2{
+  background: inherit;
+  cursor: pointer;
+  height: 0;
+  list-style: inherit;
+  margin: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: all .5s ease-in;
+  width: 150%;
+}
+
+.submenu2_test{
+  background: yellow;
+  margin-left: 120px;
+  margin-top: -25px;
+  list-style: none;
+  position: absolute;
+}
+
+._main_page_header{
+  color: inherit;
+  text-align: center;
+}
+
+._main_page_header span{
+  color: yellow;
+}
+
+._main_page_content, ._main_page_footer{
+  text-align: justify;
+  margin: 0 auto;
+  max-width: 50%;
+  width: 100%;
+}
