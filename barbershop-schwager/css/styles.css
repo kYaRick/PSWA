@@ -389,7 +389,7 @@ a {
 
 
 
-/* Стили кнопок */
+/* Стиль для конопок */
 
 .btn {
     display: inline-block;
@@ -426,7 +426,7 @@ a {
 
 
 
-/* Стили полей форм */
+/* Стилі для полів форми */
 
 
 .form-field-group {
@@ -544,7 +544,7 @@ a {
 
 
 
-/* Стили modal- */
+/* Стиль модального вікна */
 
 
 .modal-overlay {
@@ -744,7 +744,7 @@ a {
     content: "";
     display:block;
     width: 20px;
-	 height: 20px;
+	  height: 20px;
     margin: 20px auto 25px;
     background: rgb(255, 255, 255);
     transform: rotate(45deg);
