@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+  <meta charset="utf-8">
+  <title>Вхід — Shcwager</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="css/reg.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="img/favicon-64x64.png" sizes="64x64">
+  <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+</head>
+
+<body>
+  <header class="page-header">
+    <nav class="nav-bar container">
+
+      <a class="inner-logo" href="index.html" title="Повернутись на головну">
+        <img src="img/inner-logo.png" width="111" height="24" alt="Барбершоп «Shcwager»">
+      </a>
+
+      <ul class="main-nav">
+        <li class="main-nav-item">
+          <a class="nav-item-link" href="news.html">Новини</a>
+        </li>
+        <li class="main-nav-item">
+          <a class="nav-item-link" href="price.html">Прайс-лист</a>
+        </li>
+        <li class="main-nav-item">
+          <a class="nav-item-link" href="shop.html">Магазин</a>
+        </li>
+        <li class="main-nav-item">
+          <a class="nav-item-link" href="contacts.html">Контакти</a>
+        </li>
+
+        <li class="main-nav-item" style="margin-left: 100px;">
+          <a class="login-btn nav-item-link" href="login.html">Вхід</a>
+        </li>
+        <li class="main-nav-item">
+          <a class="nav-item-link" href="reg.html">Реєстрація</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+    <form id="reg_form" action="action.php" method="POST" enctype="multipart/form-data">
+      <div class="container">
+        <h1>Реєстрація</h1>
+        <p>Заповніть, будь ласка, форму для реєстрації акаунта</p>
+        <hr>
+
+        <label style="margin-top: 10px;" for="email"><b>Електронна пошта</b></label>
+        <input type="text" placeholder="Введіть пошту" name="email" required>
+        <div class="invalid">
+          <p id="email">*Електронна пошта повинна містити @ та бути введена в подібному форматі
+            kyliushyk.yaroslav@lnu.edu.com.ua
+          </p>
+        </div>
+
+        <label for="sur_name"><b>Прізвище</b></label>
+        <input type="text" placeholder="Введіть Ваше прізвище" name="sur_name" required>
+        <div class="invalid">
+          <p id="sur_name">*Прізвище повинне починатись з великої літери і може містити такі символи як "-" та
+            "пробіл"
+          </p>
+        </div>
+
+        <label for="first_name"><b>Ім'я</b></label>
+        <input type="text" placeholder="Введіть Ваше ім'я" name="first_name" required>
+        <div class="invalid">
+          <p id="first_name">*Ім'я повинне починатись з великої літери і може містити такі символи як "-" та "пробіл"
+          </p>
+        </div>
+
+        <label for="bd_date"><b>Дата народження</b></label>
+        <input id="bd_date_" type="text" placeholder="Введіть Вашу дату народження" name="bd_date" required>
+        <div class="invalid">
+          <p id="bd_date">*Некоректно вказана дата народження</p>
+        </div>
+
+        <label for="password"><b>Пароль</b></label>
+        <input id="original_pass" type="password" placeholder="Введіть пароль" name="password" required>
+        <div class="invalid">
+          <p id="password">*Пароль повинен містити від 6 до 30 символів, великі та маленькі букви, цифри та
+            спецсимволи
+          </p>
+        </div>
+
+        <label for="psw-repeat"><b>Пароль повторно</b></label>
+        <input type="password" placeholder="Повторіть пароль" name="psw-repeat" required>
+        <div class="invalid">
+          <p id="psw-repeat">*Паролі не співпадають</p>
+        </div>
+
+        <fieldset class="languages">
+          <legend>Відзначте мови якими Ви добре володієте</legend>
+          <span>українська</span> <input type="checkbox" name="languages" value="Uk"><br>
+          <span>російська</span> <input type="checkbox" name="languages" value="Ru"><br>
+          <span>англійська</span> <input type="checkbox" name="languages" value="En"><br>
+          <span>німецька</span> <input type="checkbox" name="languages" value="Ge"><br>
+          <span>французька</span> <input type="checkbox" name="languages" value="Fr"><br>
+          <span>італійська</span> <input type="checkbox" name="languages" value="Ita">
+          <span>інша...</span> <input type="checkbox" name="languages" value="ohter">
+        </fieldset>
+        <div class="invalid">
+          <p id="languages" style="margin: 0 auto; text-align: left; width: 50%;">*Не обрано жожної мови</p>
+        </div>
+
+        <div>
+          <label for="about"><b>Про себе:</b><br></label>
+          <textarea id="about_text" name="about" style="resize: none;"></textarea>
+          <div id="about" class="invalid">
+            <p>*Поле порожнє</p>
+          </div>
+        </div>
+
+        <label for="photo"><b>Оберіть фото акаунта<br></b></label>
+        <input id="file_photo" type="file" name="photo" style="background-color: inherit;">
+        <div class="invalid">
+          <p id="photo">*Зображення має бути в форматі jpeg/jpg/png</p>
+        </div>
+
+        <hr>
+
+        <button id="checking_form" type="button" class="registerbtn" onclick="formValidation()">Зареєструватись</button>
+        <div class="invalid">
+          <p id="error">
+            *Не всі поля заповнені коректно, перевірте, будь ласка, дані повторно.<br>
+            *Якщо Ви впевнені, що правильно ввели дані, натисніть кнопку повторно.</p>
+        </div>
+
+        <button id="reset_" type="button" class="registerbtn">Очистити форму</button>
+      </div>
+
+      <div class="container" style="text-align: center;">
+        <p>Проблеми з входом? <a href="#" style="text-decoration: none;"><u>Звернутись за допомогою</u></a>.
+        </p>
+      </div>
+
+      <div id="popup" class="popup">
+        <div class="popup__body">
+          <div class="popup__content">
+            <a id="popup__close" class="popup__close">X</a>
+            <header class="popup__title">
+              <h2>Перевірка коректності заповнення форми</h2>
+            </header>
+            <main class="popup__text">
+              <p id="text">Error</p>
+            </main>
+            <!-- <input id="reg_" type="submit" class="registerbtn">Так, все правильно</input> -->
+            <input id="reg_" type="submit" class="registerbtn" value="Так, все правильно" name="submit">
+          </div>
+        </div>
+      </div>
+
+      <input id="reg_1" type="submit" class="registerbtn" value="Так, все правильно" name="submit">
+    </form>
+  </main>
+
+  <footer class="page-footer">
+    <div class="footer-container  container">
+
+      <p class="footer-contacts">
+        Барбершоп «Schwager»<br>
+        Адреса: вулиця Джорджа Вашингтона, 8, Львів<br>
+        <a class="map-link" href="contacts.html#map" title="Відкрити карту">Як нас знайти?</a><br>
+        Телефон: <a href="tel:+380962196766">+380 96 219-67-66</a>
+      </p>
+
+      <div class="footer-social">
+        <p>Давайте товаришувати:</p>
+        <a class="social-btn  social-btn-vk" href="https://vk.com" target="_blank">ВКонтакті</a>
+        <a class="social-btn  social-btn-fb" href="https://facebook.com" target="_blank">Фейсбук</a>
+        <a class="social-btn  social-btn-inst" href="https://www.instagram.com" target="_blank">Інстаграм</a>
+      </div>
+
+      <p class="footer-copyright">
+        <a href="https://github.com/kYaRick" title="Подивитись GitHub автора" target="_blank">Розроблено</a>:<a
+          class="copyright-btn  btn" href="#" title="Перехід на зовнішній ресурс" target="_blank">kYaRick</a>
+      </p>
+
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="js/c_jQuery.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <script type="text/javascript" src="js/reg.js"></script>
+  <script type="text/javascript" src="js/popup.js"></script>
+
+</body>
+
+</html>

@@ -37,11 +37,12 @@
         <li class="main-nav-item">
           <a class="nav-item-link current-page" href="login.html">Вхід</a>
         </li>
-      </ul>
 
-      <ul class="user-menu">
-        <li class="user-menu-item">
-          <a class="login-btn  user-menu-link" href="login.html">Вхід</a>
+        <li class="main-nav-item" style="margin-left: 100px;">
+          <a class="login-btn nav-item-link" href="login.html">Вхід</a>
+        </li>
+        <li class="main-nav-item">
+          <a class="nav-item-link" href="reg.html">Реєстрація</a>
         </li>
       </ul>
 
@@ -54,14 +55,13 @@
       <nav class="breadcrumps">
         <a class="breadcrumps-link" href="index.html">Головна</a>
         <a class="breadcrumps-link" href="shop.html">Вхід</a>
-        <span class="breadcrumps-current">Це секретна сторінка, її немає в навігації і я ще не придумав що з нею робити
-          :)</span>
+        <span class="breadcrumps-current">Вхід до особистого кабінету</span>
       </nav>
 
       <div class="login-content">
         <h1 class="inner-title">Особистий кабінет</h1>
         <p>Введіть, будь ласка, Ваш логін та пароль</p>
-        <form class="login-form" action="index.html" method="post">
+        <form class="login-form" action="login.php" method="post" enctype="multipart/form-data">
           <div class="form-field-group">
             <input id="login-field" class="login-field  login-form-field  form-field" type="text" name="login"
               placeholder="Логін">
